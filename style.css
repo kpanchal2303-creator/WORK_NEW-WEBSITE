@@ -1,0 +1,1332 @@
+/* ==========================================================
+   HAPPY BIRTHDAY ANKITA ❤️
+   Version 3.0
+   Designed by ChatGPT & Kishan
+========================================================== */
+
+/* ==========================================================
+   RESET
+========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+    overflow:hidden;
+
+    font-family:'Poppins',sans-serif;
+
+    background:#090012;
+
+    color:white;
+
+}
+
+/* ==========================================================
+   SCREEN
+========================================================== */
+
+.screen{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:10;
+
+    padding:20px;
+
+}
+
+.screen.active{
+
+    display:flex;
+
+}
+
+/* ==========================================================
+   BACKGROUND
+========================================================== */
+
+#background{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        180deg,
+        #090012 0%,
+        #18002e 40%,
+        #2b0148 100%
+    );
+
+}
+
+/* ==========================================================
+   MOON
+========================================================== */
+
+#moon{
+
+    position:absolute;
+
+    top:8%;
+
+    right:8%;
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    background:#fff7d6;
+
+    box-shadow:
+    0 0 30px white,
+    0 0 60px white,
+    0 0 120px rgba(255,255,255,.5);
+
+}
+
+/* ==========================================================
+   CLOUDS
+========================================================== */
+
+.cloud{
+
+    position:absolute;
+
+    width:260px;
+
+    height:80px;
+
+    border-radius:100px;
+
+    background:rgba(255,255,255,.08);
+
+    filter:blur(10px);
+
+}
+
+#cloud1{
+
+    top:120px;
+
+    left:-300px;
+
+    animation:cloudMove1 45s linear infinite;
+
+}
+
+#cloud2{
+
+    top:220px;
+
+    left:-450px;
+
+    animation:cloudMove2 60s linear infinite;
+
+}
+
+@keyframes cloudMove1{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(2200px);
+    }
+
+}
+
+@keyframes cloudMove2{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(2500px);
+    }
+
+}
+
+/* ==========================================================
+   STARS
+========================================================== */
+
+.star{
+
+    position:absolute;
+
+    width:3px;
+
+    height:3px;
+
+    border-radius:50%;
+
+    background:white;
+
+    animation:twinkle 2.5s infinite;
+
+}
+
+@keyframes twinkle{
+
+    0%,100%{
+
+        opacity:.2;
+
+        transform:scale(.8);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+        transform:scale(1.8);
+
+    }
+
+}
+
+/* ==========================================================
+   GLASS CARD
+========================================================== */
+
+.glassCard{
+
+    position:relative;
+
+    width:700px;
+
+    max-width:92%;
+
+    padding:55px;
+
+    border-radius:30px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.10);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+
+    0 15px 60px rgba(0,0,0,.45);
+
+    animation:floatCard 5s ease-in-out infinite;
+
+}
+
+@keyframes floatCard{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+}
+
+/* ==========================================================
+   TYPOGRAPHY
+========================================================== */
+
+#typingText{
+
+    font-size:56px;
+
+    line-height:1.3;
+
+    min-height:160px;
+
+    font-weight:700;
+
+}
+
+.subtitle{
+
+    margin-top:25px;
+
+    font-size:22px;
+
+    opacity:.92;
+
+}
+
+.welcomeBadge{
+
+    display:inline-block;
+
+    padding:10px 22px;
+
+    border-radius:50px;
+
+    background:#ff4d88;
+
+    margin-bottom:25px;
+
+    font-size:18px;
+
+}
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+button{
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+#surpriseBtn,
+#nextBtn,
+#cakeBtn,
+#restartBtn{
+
+    margin-top:40px;
+
+    padding:18px 40px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        45deg,
+        #ff4d88,
+        #ff8db7
+    );
+
+    color:white;
+
+    font-size:22px;
+
+    font-weight:600;
+
+}
+
+#surpriseBtn:hover,
+#nextBtn:hover,
+#cakeBtn:hover,
+#restartBtn:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:0 0 30px hotpink;
+
+}
+
+/* ==========================================================
+   MUSIC BUTTON
+========================================================== */
+
+#musicBtn{
+
+    position:fixed;
+
+    top:20px;
+
+    right:20px;
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    border:none;
+
+    background:white;
+
+    font-size:26px;
+
+    z-index:9999;
+
+}
+
+/* ==========================================================
+   COUNTDOWN SCREEN
+========================================================== */
+
+.countContainer{
+
+    text-align:center;
+
+}
+
+.countText{
+
+    font-size:32px;
+
+    color:#ffd7f3;
+
+    margin-bottom:20px;
+
+    letter-spacing:2px;
+
+}
+
+#countNumber{
+
+    font-size:160px;
+
+    font-weight:700;
+
+    color:white;
+
+    text-shadow:
+    0 0 25px #ffffff,
+    0 0 50px #ff7eb3;
+
+    animation:pulseCount 1s ease-in-out infinite;
+
+}
+
+@keyframes pulseCount{
+
+    0%,100%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.15);
+
+    }
+
+}
+
+/* ==========================================================
+   BIRTHDAY SCREEN
+========================================================== */
+
+.birthdayCard{
+
+    text-align:center;
+
+}
+
+.birthdaySmall{
+
+    font-size:24px;
+
+    color:#ffd4ec;
+
+    margin-bottom:15px;
+
+}
+
+.birthdayTitle{
+
+    font-size:72px;
+
+    font-weight:700;
+
+    color:white;
+
+    text-shadow:
+    0 0 25px hotpink;
+
+}
+
+.birthdayName{
+
+    margin-top:12px;
+
+    font-size:48px;
+
+    color:#ffbddf;
+
+    font-family:'Dancing Script',cursive;
+
+}
+
+.birthdaySubtitle{
+
+    margin-top:25px;
+
+    font-size:24px;
+
+    line-height:1.8;
+
+    color:#ffffff;
+
+}
+
+/* ==========================================================
+   LETTER SCREEN
+========================================================== */
+
+.letterCard{
+
+    width:760px;
+
+    max-width:92%;
+
+    padding:45px;
+
+    border-radius:24px;
+
+    background:#f17af3;
+
+    color:#333;
+
+    box-shadow:
+    0 15px 50px rgba(0,0,0,.45);
+
+    position:relative;
+
+}
+
+.letterTitle{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+    font-size:38px;
+
+    color:#ff4d88;
+
+    font-family:'Dancing Script',cursive;
+
+}
+
+#letterText{
+
+    min-height:300px;
+
+    font-size:22px;
+
+    line-height:2;
+
+    white-space:pre-line;
+
+}
+
+#nextBtn{
+
+    display:none;
+
+}
+
+/* ==========================================================
+   REAL CAKE
+========================================================== */
+
+.cake{
+
+    position:relative;
+
+    width:260px;
+
+    margin:20px auto 40px;
+
+}
+
+/* Candles */
+
+.candles{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:28px;
+
+    margin-bottom:6px;
+
+}
+
+.candle{
+
+    width:12px;
+
+    height:45px;
+
+    border-radius:5px;
+
+    background:white;
+
+    position:relative;
+
+}
+
+/* Flames */
+
+.flame{
+
+    position:absolute;
+
+    left:-1px;
+
+    top:-18px;
+
+    width:14px;
+
+    height:20px;
+
+    background:gold;
+
+    border-radius:50% 50% 45% 45%;
+
+    box-shadow:
+    0 0 20px orange,
+    0 0 40px yellow;
+
+    animation:flicker .25s infinite alternate;
+
+}
+
+@keyframes flicker{
+
+    from{
+
+        transform:
+        scale(1)
+        rotate(-4deg);
+
+    }
+
+    to{
+
+        transform:
+        scale(1.15)
+        rotate(4deg);
+
+    }
+
+}
+
+/* Cake Layers */
+
+.layer{
+
+    margin:auto;
+
+    border-radius:14px;
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.35);
+
+}
+
+.top{
+
+    width:180px;
+
+    height:60px;
+
+    background:#ffc7d9;
+
+}
+
+.middle{
+
+    width:220px;
+
+    height:65px;
+
+    margin-top:8px;
+
+    background:#ff8fb6;
+
+}
+
+.bottom{
+
+    width:260px;
+
+    height:70px;
+
+    margin-top:8px;
+
+    background:#ff4d88;
+
+}
+
+.cakeTitle{
+
+    font-size:34px;
+
+    margin-bottom:25px;
+
+}
+
+/* ==========================================================
+   FINAL SCREEN
+========================================================== */
+
+.finalCard{
+
+    text-align:center;
+
+}
+
+.finalTitle{
+
+    font-size:56px;
+
+    font-family:'Dancing Script',cursive;
+
+    color:#ffd6ec;
+
+    text-shadow:
+    0 0 20px hotpink;
+
+}
+
+.finalMessage{
+
+    margin-top:30px;
+
+    font-size:24px;
+
+    line-height:2;
+
+    color:white;
+
+}
+
+/* ==========================================================
+   FLOATING HEARTS
+========================================================== */
+
+.heart{
+
+    position:fixed;
+
+    font-size:22px;
+
+    pointer-events:none;
+
+    z-index:2;
+
+    animation:heartFloat linear forwards;
+
+}
+
+@keyframes heartFloat{
+
+    0%{
+
+        transform:
+        translate(0,0)
+        rotate(0deg)
+        scale(.8);
+
+        opacity:0;
+
+    }
+
+    15%{
+
+        opacity:1;
+
+    }
+
+    35%{
+
+        transform:
+        translate(-20px,-180px)
+        rotate(12deg)
+        scale(1);
+
+    }
+
+    65%{
+
+        transform:
+        translate(25px,-420px)
+        rotate(-12deg)
+        scale(1.1);
+
+    }
+
+    100%{
+
+        transform:
+        translate(-10px,-900px)
+        rotate(20deg)
+        scale(.9);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==========================================================
+   FLOWER PETALS
+========================================================== */
+
+.petal{
+
+    position:fixed;
+
+    font-size:22px;
+
+    pointer-events:none;
+
+    z-index:2;
+
+    animation:petalFall linear forwards;
+
+}
+
+@keyframes petalFall{
+
+    0%{
+
+        transform:
+        translate(0,0)
+        rotate(0deg);
+
+        opacity:1;
+
+    }
+
+    25%{
+
+        transform:
+        translate(-35px,180px)
+        rotate(90deg);
+
+    }
+
+    50%{
+
+        transform:
+        translate(40px,380px)
+        rotate(180deg);
+
+    }
+
+    75%{
+
+        transform:
+        translate(-30px,650px)
+        rotate(270deg);
+
+    }
+
+    100%{
+
+        transform:
+        translate(30px,110vh)
+        rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==========================================================
+   CONFETTI
+========================================================== */
+
+.confetti{
+
+    position:fixed;
+
+    width:10px;
+
+    height:18px;
+
+    border-radius:3px;
+
+    z-index:999;
+
+    animation:confettiFall linear forwards;
+
+}
+
+@keyframes confettiFall{
+
+    from{
+
+        transform:
+        translateY(-30px)
+        rotate(0deg);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:
+        translateY(110vh)
+        rotate(720deg);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==========================================================
+   FIREWORKS
+========================================================== */
+
+.firework{
+
+    position:fixed;
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    z-index:999;
+
+    animation:explode 1s ease-out forwards;
+
+    box-shadow:
+
+        0 0 12px currentColor,
+        0 0 24px currentColor,
+        0 0 50px currentColor;
+
+}
+
+@keyframes explode{
+
+    from{
+
+        transform:scale(.2);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:scale(7);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==========================================================
+   SHOOTING STAR
+========================================================== */
+
+.shootingStar{
+
+    position:fixed;
+
+    width:180px;
+
+    height:2px;
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        white,
+
+        rgba(255,255,255,0)
+
+    );
+
+    transform:rotate(-35deg);
+
+    z-index:1;
+
+    animation:shoot 1.5s linear forwards;
+
+}
+
+@keyframes shoot{
+
+    from{
+
+        transform:
+        translate(0,0)
+        rotate(-35deg);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:
+        translate(-700px,450px)
+        rotate(-35deg);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==========================================================
+   SCREEN FADE ANIMATIONS
+========================================================== */
+
+.fadeIn{
+
+    animation:fadeIn .8s ease forwards;
+
+}
+
+.fadeOut{
+
+    animation:fadeOut .8s ease forwards;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes fadeOut{
+
+    from{
+
+        opacity:1;
+
+    }
+
+    to{
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==========================================================
+   MOBILE RESPONSIVE DESIGN
+========================================================== */
+
+@media (max-width: 768px){
+
+    /* Moon */
+
+    #moon{
+
+        width:80px;
+        height:80px;
+
+        top:25px;
+        right:25px;
+
+    }
+
+    /* Glass Card */
+
+    .glassCard{
+
+        width:95%;
+
+        padding:30px 20px;
+
+        border-radius:22px;
+
+    }
+
+    /* Welcome */
+
+    .welcomeBadge{
+
+        font-size:15px;
+
+        padding:8px 18px;
+
+    }
+
+    #typingText{
+
+        font-size:34px;
+
+        min-height:100px;
+
+    }
+
+    .subtitle{
+
+        font-size:18px;
+
+        line-height:1.6;
+
+    }
+
+    /* Countdown */
+
+    .countText{
+
+        font-size:24px;
+
+    }
+
+    #countNumber{
+
+        font-size:100px;
+
+    }
+
+    /* Birthday */
+
+    .birthdayTitle{
+
+        font-size:44px;
+
+    }
+
+    .birthdayName{
+
+        font-size:38px;
+
+    }
+
+    .birthdaySubtitle{
+
+        font-size:18px;
+
+        line-height:1.7;
+
+    }
+
+    /* Letter */
+
+    .letterCard{
+
+        width:95%;
+
+        padding:25px;
+
+        max-height:80vh;
+
+        overflow-y:auto;
+
+    }
+
+    .letterTitle{
+
+        font-size:30px;
+
+    }
+
+    #letterText{
+
+        font-size:18px;
+
+        line-height:1.8;
+
+    }
+
+    /* Cake */
+
+    .cake{
+
+        transform:scale(.80);
+
+    }
+
+    .cakeTitle{
+
+        font-size:26px;
+
+    }
+
+    /* Final */
+
+    .finalTitle{
+
+        font-size:38px;
+
+    }
+
+    .finalMessage{
+
+        font-size:18px;
+
+        line-height:1.8;
+
+    }
+
+    /* Buttons */
+
+    #surpriseBtn,
+    #nextBtn,
+    #cakeBtn,
+    #restartBtn{
+
+        width:100%;
+
+        padding:16px;
+
+        font-size:18px;
+
+    }
+
+    /* Music */
+
+    #musicBtn{
+
+        width:52px;
+
+        height:52px;
+
+        font-size:22px;
+
+    }
+
+}
+
+/* ==========================================================
+   SMALL PHONES
+========================================================== */
+
+@media (max-width:480px){
+
+    #typingText{
+
+        font-size:30px;
+
+    }
+
+    .birthdayTitle{
+
+        font-size:38px;
+
+    }
+
+    .birthdayName{
+
+        font-size:32px;
+
+    }
+
+    .cake{
+
+        transform:scale(.68);
+
+    }
+
+}
+
+/* ==========================================================
+   LANDSCAPE MOBILE
+========================================================== */
+
+@media (orientation:landscape) and (max-height:500px){
+
+    .glassCard{
+
+        transform:scale(.82);
+
+    }
+
+}
+
+/* ==========================================================
+   CUSTOM SCROLLBAR
+========================================================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#fd77fd;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#ff6b9d;
+
+    border-radius:20px;
+
+}
+
+/* ==========================================================
+   SMOOTH TRANSITIONS
+========================================================== */
+
+button,
+.glassCard,
+.letterCard{
+
+    transition:all .35s ease;
+
+}
+
+/* ==========================================================
+   FINAL GLOW EFFECT
+========================================================== */
+
+.glassCard:hover{
+
+    box-shadow:
+
+        0 20px 60px rgba(255,105,180,.35);
+
+}
+
+/* ==========================================================
+   END OF FILE
+========================================================== */
